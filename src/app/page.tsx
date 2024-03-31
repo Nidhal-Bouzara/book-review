@@ -15,16 +15,17 @@ export default async function Home() {
     return shuffled.slice(0, size);
   }
   // get random sub array from array
-  const books = await fetchFromGoogleBooks()
+  // const books = await fetchFromGoogleBooks()
   return (
     <main className={styles.main}>
       <CreateBook />
-      {
+      {/* {
         getRandomSubArray(books, 3).map((book) => (
           <BookInfo key={book.title} initialLoadBook={book} />)
-      )}
+      )} */}
       <div>
-        <Navigate />
+        <h1>TEST</h1>
+        {/* <Navigate /> */}
       </div>
     </main>
   );
