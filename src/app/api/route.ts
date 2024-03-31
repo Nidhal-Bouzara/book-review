@@ -1,3 +1,6 @@
+export const runtime = 'nodejs'; // or 'nodejs' which uses Serverless Functions
+export const dynamic = 'force-dynamic'; // always run dynamically
+
 import { fetchFromGoogleBooks } from "../../data/3rd-party-fetchers/fetchFromGoogleBook"
 import prisma from "../../data/prisma"
 
