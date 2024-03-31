@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 // http://books.google.com/books/content
 const nextConfig = {
-  target: 'serverless',
+  output: 'standalone',
   images: {
     remotePatterns: [
       {
