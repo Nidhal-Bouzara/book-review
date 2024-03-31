@@ -1,13 +1,11 @@
 import { fetchFromGoogleBooks } from "../../data/3rd-party-fetchers/fetchFromGoogleBook"
-import { fetchFromSupabase } from "../../data/3rd-party-fetchers/fetchFromSupabase"
 import prisma from "../../data/prisma"
-import { generateRandomNumberInRange } from "../page"
 
 export const GET = async (req: Request) => {
   // const books = await fetchFromGoogleBooks()
   const books = await fetchFromGoogleBooks()
   const book = books[generateRandomNumberInRange(0, books.length - 1)]
-  return Response.json(book)
+  return (Response as any).json(book)
 }
 
 interface CREATE_BOOK_BODY {
@@ -28,7 +26,7 @@ export const POST = async (req: Request) => {
   const book = await prisma.book.create({
     data: body
   })
-  return Response.json(book)
+  return (Response as any).json(book)
 }
 
 interface UPDATE_BOOK_BODY {
@@ -45,7 +43,7 @@ export const PUT = async (req: Request) => {
     where: { id },
     data: book
   })
-  return Response.json(updatedBook)
+  return (Response as any).json(updatedBook)
 }
 
 interface DELETE_BOOK_BODY {
@@ -57,5 +55,5 @@ export const DELETE = async (req: Request) => {
   const deletedBook = await prisma.book.delete({
     where: { id }
   })
-  return Response.json(deletedBook)
+  return (Response as any).json(deletedBook)
 }
