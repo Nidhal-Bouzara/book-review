@@ -17,6 +17,9 @@ interface CREATE_BOOK_BODY {
   image: string
 }
 
+const generateRandomNumberInRange = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 export const POST = async (req: Request) => {
   // extract body
